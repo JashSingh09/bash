@@ -1,0 +1,25 @@
+#!binbash
+
+#what names are good
+good_names=(Jashan jashan Mr Warren Daniel Messi)
+
+echo Please enter a name 
+read name
+
+# @ symbol if for reading everything in the list, arrays actually
+#if the name is not one of the options, then it makes a different variable true
+#if the different variable is true then it says that the name you said is good
+is_good_name=false
+for good_name in ${good_names[@]}; do
+    if [[ $name == $good_name ]]; then
+        is_good_name=true
+        break
+    fi
+done
+
+#dollar sign is for what the variable term is not just the straight up term, 
+if $is_good_name; then
+    echo $name is my best friend now
+else
+    echo I prefer other names
+fi
